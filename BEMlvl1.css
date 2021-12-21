@@ -31,6 +31,10 @@ body > div {
 .btn:hover{
     opacity: .8;
 }
+.btn::selection{
+    background: transparent;
+}
+
 .btn + .btn {
     margin-left: 16px;
 }

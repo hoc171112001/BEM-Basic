@@ -33,7 +33,7 @@
       console.log(success,danger);
       const message = {
       }
-      message.success = function(){
+      message.success = function(message){
         let timeoutId=setTimeout(()=>{
           toast.removeChild(child)
         },3400)
@@ -45,7 +45,7 @@
         </div>
         <div class="toast__body">
           <b>Success</b>
-          <p>Action successfully!</p>
+          <p>${message}</p>
         </div>
         <div class="toast__close">
           <i class="fas fa-times"></i>
@@ -59,7 +59,7 @@
           }
         }
       }
-      message.error = function(){
+      message.error = function(message){
         let timeoutId=setTimeout(()=>{
           toast.removeChild(child)
         },3400)
@@ -70,8 +70,8 @@
         <i class="fas fa-check-circle"></i>
         </div>
         <div class="toast__body">
-          <b>Success</b>
-          <p>Action successfully!</p>
+          <b>Error</b>
+          <p>${message}</p>
         </div>
         <div class="toast__close">
           <i class="fas fa-times"></i>
@@ -86,10 +86,10 @@
         }
       }
       success.addEventListener('click', ()=>{
-        message.success()
+        message.success("Action successfully!")
       })
       danger.addEventListener('click',()=>{
-        message.error()
+        message.error("Action failed!")
       })
     </script>
   </body>
